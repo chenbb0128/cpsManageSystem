@@ -2,31 +2,15 @@
 
 namespace App\Repositories;
 
-class UserWalletRepository
+use App\Repositories\Models\UserWallet;
+
+/**
+ * @property UserWallet $model
+ */
+class UserWalletRepository extends BaseRepository
 {
-    /**
-     * @var UserRepository
-     */
-    private $model;
-
-    private static $instance;
-
     public function __construct() {
-        $this->model = new UserRepository();
-    }
-
-    public static function getInstance()
-    {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-    public function model()
-    {
-        return $this->model;
+        $this->model = new UserWallet();
     }
 
     /**
@@ -39,15 +23,15 @@ class UserWalletRepository
         return $this->model->where('user_id', $userId)
             ->select([
                 'id',
-                'extract_buy_money',
-                'extracting_buy_money',
-                'extracted_buy_money',
-                'extract_invite_money',
-                'extracting_invite_money',
-                'extracted_invite_money',
-                'extract_agent_money',
-                'extracting_agent_money',
-                'extracted_agent_money',
+                'extract_buy_amount',
+                'extracting_buy_amount',
+                'extracted_buy_amount',
+                'extract_invite_amount',
+                'extracting_invite_amount',
+                'extracted_invite_amount',
+                'extract_agent_amount',
+                'extracting_agent_amount',
+                'extracted_agent_amount',
             ])
             ->first();
     }

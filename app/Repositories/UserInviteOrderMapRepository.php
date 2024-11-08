@@ -2,7 +2,15 @@
 
 namespace App\Repositories;
 
-class UserInviteOrderMapRepository
-{
+use App\Repositories\Models\UserInviteOrderMap;
 
+/**
+ * @property UserInviteOrderMap $model
+ */
+class UserInviteOrderMapRepository extends BaseRepository
+{
+    public function __construct()
+    {
+        $this->model = new UserInviteOrderMap();
+    }
 }

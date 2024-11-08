@@ -18,7 +18,7 @@ return new class extends Migration
             $table->smallInteger('change_type')->default(0)->comment('变化类别: 1 增加 2 减少');
             $table->bigInteger('before_amount')->default(0)->comment('变更前金额');
             $table->bigInteger('after_money')->default(0)->comment('变更后金额');
-            $table->text('extra_info')->default('')->comment('额外的信息，json保存');
+            $table->text('extra_info')->comment('额外的信息，json保存');
 
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));

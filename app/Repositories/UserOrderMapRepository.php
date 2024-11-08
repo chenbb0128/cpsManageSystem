@@ -4,31 +4,12 @@ namespace App\Repositories;
 
 use App\Repositories\Models\UserOrderMap;
 
-class UserOrderMapRepository
+/**
+ * @property UserOrderMap $model
+ */
+class UserOrderMapRepository extends BaseRepository
 {
-
-    /**
-     * @var UserOrderMap
-     */
-    private $model;
-
-    private static $instance;
-
     public function __construct() {
         $this->model = new UserOrderMap();
-    }
-
-    public static function getInstance()
-    {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-    public function model()
-    {
-        return $this->model;
     }
 }
