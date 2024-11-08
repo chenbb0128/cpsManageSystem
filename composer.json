@@ -31,7 +31,8 @@
         },
         "classmap": [
             "packages/jd",
-            "packages/dataoke"
+            "packages/dataoke",
+            "packages/taobao"
         ]
     },
     "autoload-dev": {

@@ -5,12 +5,19 @@ namespace App\Http\Controllers\Api;
 use App\Services\Cps\DataokeService;
 use App\Services\Cps\JdService;
 use App\Services\Cps\JingtuituiService;
+use App\Services\GoodsSearch\GoodsSearch;
 use App\Services\Wechat\OfficialAccountService;
 
 class TestController
 {
     public function test()
     {
+
+        $searchPlatform = GoodsSearch::getSearchPlatform('');
+
+        (new GoodsSearch())->setSearchStrategy($searchPlatform)->search('');
+
+        dd(123);
 
 //        $itemId = 'hpoEHUrQe20qbkiLnfCcpOM7_3tyFQIwo0ePO6qszZw';
 //        $item = JdService::getInstance()->getGoodsInfo($itemId);

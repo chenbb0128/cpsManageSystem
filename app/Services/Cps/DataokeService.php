@@ -50,7 +50,7 @@ class DataokeService
                 $data = $result['data'];
             }
         } catch (\Exception $e) {
-            \Log::error('大淘客剪切板解析错误：' . $e->getMessage());
+            \Log::error("内容解析失败:{$content},错误为:" . $e->getMessage());
         }
 
         return $data;
