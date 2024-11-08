@@ -31,10 +31,4 @@ class UserOrderMapRepository
     {
         return $this->model;
     }
-
-    public function getNotExtractAmountByUserId($userId)
-    {
-        $this->model->where('user_id', $userId)
-            ->where()
-    }
 }
